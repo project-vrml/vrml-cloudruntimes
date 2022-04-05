@@ -1,0 +1,3 @@
+# Auto configure alerts.config
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+group.rxcloud.vrml.cloudruntimes.alert.config.AlertCloudRuntimesConfiguration

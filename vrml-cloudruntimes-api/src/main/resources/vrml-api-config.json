@@ -1,0 +1,8 @@
+[
+  {
+    "logsKey": "default",
+    "openRequestLog": false,
+    "openResponseLog": false,
+    "openErrorLog": true
+  }
+]

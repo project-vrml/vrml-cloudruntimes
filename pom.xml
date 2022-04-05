@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>group.rxcloud</groupId>
+    <artifactId>vrml-cloudruntimes</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.1</version>
+
+    <name>vrml-cloudruntimes</name>
+    <description>Vrml API impl by Clout-Runtimes API.</description>
+    <url>http://www.kevinten.com/</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>kevinten10</name>
+            <email>596823919@qq.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:project-vrml/vrml-cloudruntimes.git</connection>
+        <developerConnection>scm:git:git@github.com:project-vrml/vrml-cloudruntimes.git</developerConnection>
+        <url>git@github.com:project-vrml/vrml-cloudruntimes.git</url>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <modules>
+        <module>vrml-cloudruntimes-alert</module>
+        <module>vrml-cloudruntimes-api</module>
+        <module>vrml-cloudruntimes-compute</module>
+        <module>vrml-cloudruntimes-infrastructure</module>
+        <module>vrml-cloudruntimes-log</module>
+        <module>vrml-cloudruntimes-metric</module>
+        <module>vrml-cloudruntimes-request</module>
+        <module>vrml-cloudruntimes-switch</module>
+    </modules>
+
+    <properties>
+        <java.version>8</java.version>
+        <file.encoding>UTF-8</file.encoding>
+        <maven.version>3.8.1</maven.version>
+
+        <vrml.version>1.0.3</vrml.version>
+        <cloud-runtimes-api.version>1.11.RELEASE</cloud-runtimes-api.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- module -->
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-alert</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-compute</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-log</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-metric</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-request</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml-cloudruntimes-switch</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- vrml -->
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>vrml</artifactId>
+                <version>${vrml.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- cloud-runtimes-api -->
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>cloud-runtimes-api</artifactId>
+                <version>${cloud-runtimes-api.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- tool -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${file.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

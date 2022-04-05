@@ -1,0 +1,3 @@
+# Auto configure api.config
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+group.rxcloud.vrml.cloudruntimes.api.ApiCloudRuntimesConfiguration

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>vrml-cloudruntimes</artifactId>
+        <groupId>group.rxcloud</groupId>
+        <version>1.0.1</version>
+    </parent>
+
+    <artifactId>vrml-cloudruntimes-infrastructure</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- vrml -->
+        <dependency>
+            <groupId>group.rxcloud</groupId>
+            <artifactId>vrml-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>group.rxcloud</groupId>
+            <artifactId>vrml-resource</artifactId>
+        </dependency>
+
+        <!-- json -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- cloud-runtimes-api -->
+        <dependency>
+            <groupId>group.rxcloud</groupId>
+            <artifactId>cloud-runtimes-api</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- reactor-core -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+</project>
