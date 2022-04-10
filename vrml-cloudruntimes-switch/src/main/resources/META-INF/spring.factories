@@ -1,0 +1,3 @@
+# Auto configure switch.config
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+group.rxcloud.vrml.cloudruntimes.switchs.SwitchCloudRuntimesConfiguration

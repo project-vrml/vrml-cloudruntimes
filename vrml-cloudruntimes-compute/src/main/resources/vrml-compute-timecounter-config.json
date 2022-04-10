@@ -1,0 +1,7 @@
+[
+  {
+    "key": "default",
+    "expirationTime": 1,
+    "triggerCount": 100
+  }
+]

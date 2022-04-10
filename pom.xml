@@ -60,7 +60,7 @@
         <file.encoding>UTF-8</file.encoding>
         <maven.version>3.8.1</maven.version>
 
-        <vrml.version>1.0.3</vrml.version>
+        <vrml.version>1.0.4</vrml.version>
         <cloud-runtimes-api.version>1.11.RELEASE</cloud-runtimes-api.version>
     </properties>
 

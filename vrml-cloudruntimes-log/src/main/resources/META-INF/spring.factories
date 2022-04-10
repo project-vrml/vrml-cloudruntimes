@@ -1,0 +1,3 @@
+# Auto configure log.config
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+group.rxcloud.vrml.cloudruntimes.log.LogCloudRuntimesConfiguration

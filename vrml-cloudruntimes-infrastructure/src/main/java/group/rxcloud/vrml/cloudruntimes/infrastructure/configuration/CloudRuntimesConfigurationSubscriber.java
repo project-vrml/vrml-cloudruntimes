@@ -1,9 +1,10 @@
-package group.rxcloud.vrml.cloudruntimes.infrastructure;
+package group.rxcloud.vrml.cloudruntimes.infrastructure.configuration;
 
 import group.rxcloud.cloudruntimes.domain.core.ConfigurationRuntimes;
 import group.rxcloud.cloudruntimes.domain.core.configuration.ConfigurationItem;
 import group.rxcloud.cloudruntimes.domain.core.configuration.SubConfigurationResp;
 import group.rxcloud.cloudruntimes.utils.TypeRef;
+import group.rxcloud.vrml.cloudruntimes.infrastructure.CloudRuntimesSpringProvider;
 import group.rxcloud.vrml.core.serialization.Serialization;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
@@ -17,24 +18,49 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * The Cloud runtimes configuration subscriber.
+ */
 @Slf4j
 @Component
 public class CloudRuntimesConfigurationSubscriber {
 
-    private final CloudRuntimesProvider cloudRuntimesProvider;
+    private final CloudRuntimesSpringProvider cloudRuntimesSpringProvider;
 
-    public CloudRuntimesConfigurationSubscriber(CloudRuntimesProvider cloudRuntimesProvider) {
-        this.cloudRuntimesProvider = cloudRuntimesProvider;
+    /**
+     * Instantiates a new Cloud runtimes configuration subscriber.
+     *
+     * @param cloudRuntimesSpringProvider the cloud runtimes provider
+     */
+    public CloudRuntimesConfigurationSubscriber(CloudRuntimesSpringProvider cloudRuntimesSpringProvider) {
+        this.cloudRuntimesSpringProvider = cloudRuntimesSpringProvider;
     }
 
+    /**
+     * Subscribe configuration.
+     *
+     * @param <T>        the type parameter
+     * @param configName the config name
+     * @param configType the config type
+     * @return the optional of cloudruntimes configuration obj
+     */
     public <T> Optional<Tuple2<T, Flux<T>>> subscribeConfiguration(String configName, Class<T> configType) {
         return subscribeConfiguration(configName, configType, null);
     }
 
+    /**
+     * Subscribe configuration.
+     *
+     * @param <T>        the type parameter
+     * @param configName the config name
+     * @param configType the config type
+     * @param metadata   the metadata
+     * @return the optional of cloudruntimes configuration obj
+     */
     public <T> Optional<Tuple2<T, Flux<T>>> subscribeConfiguration(String configName, Class<T> configType, Map<String, String> metadata) {
-        final ConfigurationRuntimes configurationRuntimes = cloudRuntimesProvider.configurationRuntimes();
-        final String configurationStoreName = cloudRuntimesProvider.getConfigurationStoreName();
-        final String configurationAppId = cloudRuntimesProvider.getConfigurationAppId();
+        final ConfigurationRuntimes configurationRuntimes = cloudRuntimesSpringProvider.configurationRuntimes();
+        final String configurationStoreName = cloudRuntimesSpringProvider.getConfigurationStoreName();
+        final String configurationAppId = cloudRuntimesSpringProvider.getConfigurationAppId();
         List<String> keys = Collections.singletonList(configName);
         TypeRef<T> type = TypeRef.get(configType);
         try {

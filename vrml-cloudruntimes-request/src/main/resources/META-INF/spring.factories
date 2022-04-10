@@ -1,0 +1,3 @@
+# Auto configure request.config
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+group.rxcloud.vrml.cloudruntimes.request.RequestCloudRuntimesConfiguration

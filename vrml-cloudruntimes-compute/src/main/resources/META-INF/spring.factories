@@ -1,0 +1,3 @@
+# Auto configure compute.config
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+group.rxcloud.vrml.cloudruntimes.compute.TimeCounterComputeCloudRuntimesConfiguration

@@ -2,14 +2,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>vrml-cloudruntimes</artifactId>
         <groupId>group.rxcloud</groupId>
         <version>1.0.1</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>vrml-cloudruntimes-request</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>group.rxcloud</groupId>
+            <artifactId>vrml-cloudruntimes-infrastructure</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>group.rxcloud</groupId>
+            <artifactId>vrml-request</artifactId>
+        </dependency>
+
+        <!-- cloud-runtimes-api -->
+        <dependency>
+            <groupId>group.rxcloud</groupId>
+            <artifactId>cloud-runtimes-api</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- reactor-core -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
 </project>
