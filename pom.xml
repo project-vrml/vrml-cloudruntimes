@@ -7,7 +7,7 @@
     <groupId>group.rxcloud</groupId>
     <artifactId>vrml-cloudruntimes</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>vrml-cloudruntimes</name>
     <description>Vrml API impl by Clout-Runtimes API.</description>
@@ -60,8 +60,8 @@
         <file.encoding>UTF-8</file.encoding>
         <maven.version>3.8.1</maven.version>
 
-        <vrml.version>1.0.4</vrml.version>
-        <cloud-runtimes-api.version>1.11.RELEASE</cloud-runtimes-api.version>
+        <vrml.version>1.0.5</vrml.version>
+        <cloud-runtimes-api.version>1.12.RELEASE</cloud-runtimes-api.version>
     </properties>
 
     <dependencyManagement>
@@ -131,6 +131,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
