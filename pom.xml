@@ -7,7 +7,7 @@
     <groupId>group.rxcloud</groupId>
     <artifactId>vrml-cloudruntimes</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <name>vrml-cloudruntimes</name>
     <description>Vrml API impl by Clout-Runtimes API.</description>
@@ -60,8 +60,12 @@
         <file.encoding>UTF-8</file.encoding>
         <maven.version>3.8.1</maven.version>
 
-        <vrml.version>1.0.5</vrml.version>
+        <!-- 2022.4.2 lasted version -->
         <cloud-runtimes-api.version>1.12.RELEASE</cloud-runtimes-api.version>
+        <lombok.version>1.18.22</lombok.version>
+        <reactor-core.version>3.3.22.RELEASE</reactor-core.version>
+        <vavr.version>0.10.4</vavr.version>
+        <vrml.version>1.0.7</vrml.version>
     </properties>
 
     <dependencyManagement>
@@ -122,15 +126,33 @@
                 <groupId>group.rxcloud</groupId>
                 <artifactId>cloud-runtimes-api</artifactId>
                 <version>${cloud-runtimes-api.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+            <!-- reactor-core -->
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-core</artifactId>
+                <version>${reactor-core.version}</version>
+                <optional>true</optional>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <!-- vavr -->
+        <dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
+            <optional>true</optional>
+        </dependency>
+
         <!-- tool -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>

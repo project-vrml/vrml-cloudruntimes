@@ -7,10 +7,14 @@
     <parent>
         <artifactId>vrml-cloudruntimes</artifactId>
         <groupId>group.rxcloud</groupId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
     </parent>
 
     <artifactId>vrml-cloudruntimes-api</artifactId>
+
+    <properties>
+        <aspectjweaver.version>1.9.9.1</aspectjweaver.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -54,6 +58,7 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
