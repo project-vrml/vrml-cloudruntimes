@@ -28,14 +28,14 @@ public class ResourcesConfigurationLoader {
         T result = aTry
                 .map(file -> {
                     if (log.isInfoEnabled()) {
-                        log.info("[Vrml.CloudRuntimes][ResourcesConfigurationLoader] load configuration [{}] success, file is [{}]",
+                        log.info("[Vrml][CloudRuntimes][ResourcesConfigurationLoader] load configuration [{}] success, file is [{}]",
                                 configName, Serialization.toJsonSafe(file));
                     }
                     return file;
                 })
                 .recover(throwable -> {
                     if (log.isWarnEnabled()) {
-                        log.warn("[Vrml.CloudRuntimes][ResourcesConfigurationLoader] load configuration [{}] error",
+                        log.warn("[Vrml][CloudRuntimes][ResourcesConfigurationLoader] load configuration [{}] error",
                                 configName, throwable);
                     }
                     return null;

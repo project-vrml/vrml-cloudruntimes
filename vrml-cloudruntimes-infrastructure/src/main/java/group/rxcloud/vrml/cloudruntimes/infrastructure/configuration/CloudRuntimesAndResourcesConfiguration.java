@@ -77,7 +77,7 @@ public abstract class CloudRuntimesAndResourcesConfiguration<T> {
      * But you can rewrite this hook(), do your interrupt logic.
      */
     protected void doHookWhenConfigEmpty() {
-        final String ERROR = "[Vrml.CloudRuntimes][CloudRuntimesConfigurationSubscriber] " +
+        final String ERROR = "[Vrml][CloudRuntimes][CloudRuntimesConfigurationSubscriber] " +
                 "[" + this.getClass().getSimpleName() + "] " +
                 "load configuration [" + configName + "] empty!";
         if (log.isErrorEnabled()) {

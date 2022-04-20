@@ -79,13 +79,13 @@ public class CloudRuntimesConfigurationSubscriber {
 
             Tuple2<T, Flux<T>> tuple2 = Tuple.of(firstConfiguration, subscribeConfigurationFlux);
             if (log.isInfoEnabled()) {
-                log.info("[Vrml.CloudRuntimes][CloudRuntimesConfigurationSubscriber] subscribe configuration [{}] success, first response is [{}]",
+                log.info("[Vrml][CloudRuntimes][CloudRuntimesConfigurationSubscriber] subscribe configuration [{}] success, first response is [{}]",
                         configName, Serialization.toJsonSafe(firstConfiguration));
             }
             return Optional.of(tuple2);
         } catch (Exception e) {
             if (log.isWarnEnabled()) {
-                log.warn("[Vrml.CloudRuntimes][CloudRuntimesConfigurationSubscriber] subscribe configuration [{}] error",
+                log.warn("[Vrml][CloudRuntimes][CloudRuntimesConfigurationSubscriber] subscribe configuration [{}] error",
                         configName, e);
             }
             return Optional.empty();

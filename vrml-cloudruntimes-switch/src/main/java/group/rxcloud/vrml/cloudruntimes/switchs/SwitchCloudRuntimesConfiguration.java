@@ -51,7 +51,7 @@ public class SwitchCloudRuntimesConfiguration extends CloudRuntimesAndResourcesC
             }
         } catch (Exception e) {
             if (log.isWarnEnabled()) {
-                log.warn("[Vrml.CloudRuntimes][SwitchCloudRuntimesConfiguration] check switches[{}] error",
+                log.warn("[Vrml][CloudRuntimes][SwitchCloudRuntimesConfiguration] check switches[{}] error",
                         Serialization.GSON.toJson(switchKeys), e);
             }
         }
