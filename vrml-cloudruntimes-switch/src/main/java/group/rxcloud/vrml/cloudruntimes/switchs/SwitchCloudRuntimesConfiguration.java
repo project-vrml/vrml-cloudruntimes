@@ -31,30 +31,4 @@ public class SwitchCloudRuntimesConfiguration extends CloudRuntimesAndResourcesC
     public JsonObject getParams() {
         return this.config;
     }
-
-    @Override
-    public boolean checkSwitches(List<String> switchKeys) {
-        if (CollectionUtils.isEmpty(switchKeys)) {
-            return false;
-        }
-        JsonObject params = this.getParams();
-        try {
-            for (int i = 0; i < switchKeys.size(); i++) {
-                String key = switchKeys.get(i);
-                params = params.getAsJsonObject(key);
-                if (params == null) {
-                    return false;
-                }
-                if (i == switchKeys.size() - 1) {
-                    return params.getAsBoolean();
-                }
-            }
-        } catch (Exception e) {
-            if (log.isWarnEnabled()) {
-                log.warn("[Vrml][CloudRuntimes][SwitchCloudRuntimesConfiguration] check switches[{}] error",
-                        Serialization.GSON.toJson(switchKeys), e);
-            }
-        }
-        return false;
-    }
 }
