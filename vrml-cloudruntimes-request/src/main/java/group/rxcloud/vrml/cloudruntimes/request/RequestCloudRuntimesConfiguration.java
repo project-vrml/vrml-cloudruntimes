@@ -33,7 +33,7 @@ public class RequestCloudRuntimesConfiguration extends CloudRuntimesAndResources
             return null;
         }
         return entities.stream()
-                .filter(requestReportConfig -> requestName.equalsIgnoreCase(requestReportConfig.requestReportName()))
+                .filter(requestReportConfig -> requestName.equalsIgnoreCase(requestReportConfig.getRequestReportName()))
                 .findFirst()
                 .orElse(null);
     }
